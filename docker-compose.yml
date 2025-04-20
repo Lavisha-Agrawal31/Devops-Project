@@ -15,7 +15,8 @@ services:
     ports:
       - "1337:1337"
     volumes:
-      - strapi-data:/app/.tmp
+      - strapi-app-data:/app
+      - strapi-uploads:/app/public/uploads
     env_file:
       - ./Ecom-Backend/.env
     environment:
@@ -24,8 +25,8 @@ services:
       - app-network
 
 volumes:
-  strapi-data:
-
+  strapi-app-data:
+  strapi-uploads:
 
 networks:
   app-network:

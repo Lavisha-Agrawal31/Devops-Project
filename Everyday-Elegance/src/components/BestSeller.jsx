@@ -19,6 +19,7 @@ export default function BestSeller() {
         
         const productsData = data.data.map((item) => ({
           id: item.documentId,
+          id: item.documentId,
           name: item.name,
           price: item.price,
           image: item.images[0]?.url 

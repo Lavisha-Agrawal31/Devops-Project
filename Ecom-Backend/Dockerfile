@@ -14,5 +14,4 @@ RUN npm run build
 
 EXPOSE 1337
 
-# Start the server
 CMD ["npm", "run", "develop"]
