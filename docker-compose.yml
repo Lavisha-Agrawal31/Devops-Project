@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   frontend:
     build:
@@ -15,7 +17,7 @@ services:
     ports:
       - "1337:1337"
     volumes:
-      - strapi-app-data:/app
+      - strapi-app-data:/app/.tmp
       - strapi-uploads:/app/public/uploads
     env_file:
       - ./Ecom-Backend/.env
@@ -26,7 +28,12 @@ services:
 
 volumes:
   strapi-app-data:
+    external: true
+    name: devopsproject_strapi-app-data
+
   strapi-uploads:
+    external: true
+    name: devopsproject_strapi-uploads
 
 networks:
   app-network:
